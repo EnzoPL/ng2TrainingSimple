@@ -1,0 +1,10 @@
+<div>
+  <a
+  [ngClass]="{'todo-item-isDone': todo.isDone}"
+  [routerLink]="['/todo/detail',todo.id]">
+    {{ todo.title }}
+  </a>
+  <i>{{ todo.dueDate | date:'dd/MM/yyyy' }}</i>
+  <button (click)="updateTodo($event)">Update</button>
+  <button (click)="removeTodo($event)">X</button>
+</div>

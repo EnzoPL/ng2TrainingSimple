@@ -1,0 +1,28 @@
+Create new todo here
+<form [formGroup]="todoForm" (ngSubmit)="createTodo()">
+  <div [ngClass]="{'input-error': !todoForm.controls.title.valid}">
+    <input placeholder="title" type="text" formControlName="title"/>
+    <div *ngIf="todoForm.controls.title.errors?.required">
+      required
+    </div>
+    <div *ngIf="todoForm.controls.title.errors?.minlength">
+       min length : {{todoForm.controls.title.Validators}}
+    </div>
+    <div *ngIf="todoForm.controls.title.errors?.maxlength">
+       max length : {{todoForm.controls.title.Validators.maxlength.value}}
+    </div>
+  </div>
+  <div [ngClass]="{'input-error': !todoForm.controls.description.valid}">
+    <input placeholder="description" type="text" formControlName="description"/>
+    <div *ngIf="todoForm.controls.description.errors?.required">
+      required
+    </div>
+  </div>
+  <div [ngClass]="{'input-error': !todoForm.controls.dueDate.valid}">
+    <input placeholder="dueDate" type="date" formControlName="dueDate"/>
+    <div *ngIf="todoForm.controls.dueDate.errors?.required">
+      required
+    </div>
+  </div>
+  <button type="submit" name="button" [disabled]="!todoForm.valid">Create todo</button>
+</form>

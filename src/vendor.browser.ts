@@ -12,7 +12,7 @@ import 'zone.js/dist/long-stack-trace-zone';
 
 // RxJS
 // import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/filter';
+//import 'rxjs/add/operator/filter';
 import 'rxjs/Rx';
 
 
@@ -24,5 +24,3 @@ import '@angular/common';
 import '@angular/http';
 import '@angular/router';
 import '@angular/forms';
-
-import 'ng2-translate';
